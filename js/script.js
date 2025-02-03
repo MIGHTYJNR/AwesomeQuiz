@@ -7,8 +7,8 @@ let timeValue = 15;
 let widthValue = 0;
 let userScore = 0;
 
-const start_btn = document.querySelector(".start_btn button");
-const info_box = document.querySelector(".info_box");
+const start_btn = document.querySelector(".start_btn button"); 
+const info_box = document.querySelector(".info_box"); 
 const exit_btn = info_box.querySelector(".buttons .quit");
 const continue_btn = info_box.querySelector(".buttons .restart");
 const quiz_box = document.querySelector(".quiz_box");
@@ -136,12 +136,19 @@ function optionSelected(answer) {
         answer.insertAdjacentHTML("beforeend", crossIcon);
 
         //if wrong answer select/indicate correct answer automatically
-        for (let i = 0; i <= allOption; i++) {
+        // for (let i = 0; i <= allOption; i++) {
+        //     if (option_list.children[i].textContent == correctAnswer) {
+        //         option_list.children[i].setAttribute("class", "option correct");
+        //         option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
+        //     }
+        // }
+        for (let i = 0; i < allOption; i++) {
             if (option_list.children[i].textContent == correctAnswer) {
-                option_list.children[i].setAttribute("class", "option correct");
+                option_list.children[i].classList.add("correct");
                 option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
             }
         }
+        
     }
 
     //onselect disable other option
